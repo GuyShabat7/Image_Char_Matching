@@ -1,0 +1,84 @@
+guy_shabat
+203605985
+
+1) 
+AsciiAlgorithm - responsible for running the algorithm.
+It uses a field of the class, ImageProcess, which represents 
+a processed image, and a field of the class, SubImgCharMatcher,
+for converting brightness to characters.
+
+Exception Classes - one for an illegal command and the other 
+for an invalid format. They are used in the class ShellMethods.
+
+Shell - The class will perform user interface actions. The 
+class has a field for a SubImgCharMatcher that initially 
+receives a default array of 0-9 and up to change, the use 
+will only be with these characters. Also, the class has a 
+field for an Image that initially receives a cat image, 
+additionally, a field for an AsciiOutput that represents 
+the output that initially is updated to console, and also, 
+a field of ShellMethods that will receive all parameters 
+from it and perform all the logic and calculations according 
+to the interaction with the user interface.
+
+
+AsciiOutput - An interface that serves as a strategy for output 
+to html and console.
+
+
+ImageProcess - The role of the class is to perform processing 
+on the image. The class holds a field of type Image that 
+represents the image on which the processing will be performed.
+
+
+SubImgCharMatcher - Responsible for matching characters according 
+to their brightness levels. The class uses data structures like 
+ArrayList and HashMap to store data for the matching process.
+
+ 
+2) 
+SubImgCharMatcher: 
+ArrayList<Character> - 
+I used an ArrayList of character types. Using an ArrayList
+is convenient when the variables are primitive, similar to
+characters. Using a list is intended to hold the characters,
+so accessing them will be convenient and fast. Since we
+increase and decrease the array frequently, the ArrayList
+is more convenient than a simple array because the operations
+of increasing and decreasing it complicate the code. The
+performance of the ArrayList is slower than a simple array, 
+but for the purposes of the class, the ArrayList is a more 
+convenient data structure.
+
+HashMap<Character, Double> -
+
+I chose to use a HashMap in order to match each character
+with its corresponding brightness. Using this data structure
+is intended to efficiently extract the brightness from the 
+selected character. The runtime for extracting the character 
+is very fast, but the memory storage is expensive.
+
+3) 
+I have created two classes to handle exceptions: one for 
+incorrect commands entered by the user and another for invalid 
+formats entered by the user. For incorrect commands, I have 
+included cases where the user inputs a command that is not valid 
+for the input, when the user inputs an empty array of characters, 
+and when the resolution does not change. For format issues, such as 
+incorrect usage of the add or remove command, I use a class called 
+"IncoerrectFormatExceptions" to handle these cases. The exceptions 
+are thrown from the class that contains all the complexities of 
+the methods in the class.
+
+4)
+I added data structures of type ArrayList and HashMap. Additionally, 
+I added private methods for performing calculations. I added a getter 
+method that returns the ArrayList holding the characters. In the getter 
+method, I used the ShellMethods class to check if the character array 
+is empty and therefore throw an exception.
+
+
+
+
+
+ 
